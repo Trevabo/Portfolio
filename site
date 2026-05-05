@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trevabo Da Silva — Portfólio</title>
+  <meta name="description" content="Portfólio de Trevabo Da Silva, estudante de Ciência da Computação na UERJ com interesse em dados, automação e projetos práticos com Python, SQL e desenvolvimento web." />
+  <meta property="og:title" content="Trevabo Da Silva — Portfólio" />
+  <meta property="og:description" content="Projetos, trajetória e stack de um estudante de Ciência da Computação na UERJ com foco em dados e desenvolvimento." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --color-bg: #eef3ff;
+      --color-surface: #f7f9ff;
+      --color-surface-2: #ffffff;
+      --color-surface-offset: #e3ebff;
+      --color-border: rgba(10, 30, 75, 0.12);
+      --color-text: #0e1830;
+      --color-text-muted: #51607e;
+      --color-text-faint: #7f8ba3;
+      --color-primary: #1e5eff;
+      --color-primary-hover: #1747c2;
+      --color-primary-highlight: rgba(30, 94, 255, 0.12);
+      --color-success: #2e9d66;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 999px;
+      --shadow-sm: 0 8px 24px rgba(14, 24, 48, 0.06);
+      --shadow-md: 0 18px 40px rgba(14, 24, 48, 0.10);
+      --content-default: 1120px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #06111f;
+      --color-surface: #0b1728;
+      --color-surface-2: #102038;
+      --color-surface-offset: #132744;
+      --color-border: rgba(171, 200, 255, 0.14);
+      --color-text: #edf4ff;
+      --color-text-muted: #a5b7d6;
+      --color-text-faint: #7183a3;
+      --color-primary: #4b83ff;
+      --color-primary-hover: #76a0ff;
+      --color-primary-highlight: rgba(75, 131, 255, 0.12);
+      --color-success: #68d8a4;
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.24);
+      --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top, rgba(75, 131, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 80% 18%, rgba(105, 154, 255, 0.10), transparent 24%),
+        linear-gradient(180deg, #07111f 0%, #081321 34%, #06111f 100%);
+      background-color: var(--color-bg);
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+    .skip-link {
+      position: absolute; left: -999px; top: 0;
+      background: var(--color-primary); color: white; padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md); z-index: 100;
+    }
+    .skip-link:focus { left: var(--space-4); top: var(--space-4); }
+
+    .container { width: min(calc(100% - 2rem), var(--content-default)); margin-inline: auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 17, 31, 0.72);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 76px; gap: var(--space-4);
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: var(--space-3);
+      font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 12px;
+      display: grid; place-items: center;
+      border: 1px solid rgba(155, 186, 255, 0.24);
+      background: linear-gradient(180deg, rgba(77, 130, 255, 0.24), rgba(77, 130, 255, 0.06));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: var(--space-5);
+      color: var(--color-text-muted); font-size: var(--text-sm);
+    }
+
+    .nav-links a:hover { color: var(--color-text); }
+
+    .theme-toggle {
+      width: 44px; height: 44px; border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      display: grid; place-items: center;
+      color: var(--color-text-muted);
+      background: rgba(255,255,255,0.02);
+    }
+
+    main { padding-bottom: var(--space-24); }
+
+    .hero {
+      padding: clamp(5rem, 10vw, 8rem) 0 var(--space-20);
+    }
+
+    .hero-grid {
+      display: grid; gap: var(--space-10);
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: 0.5rem 0.875rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-highlight);
+      color: #c7d9ff;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(146, 181, 255, 0.16);
+      margin-bottom: var(--space-5);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 0.98;
+      max-width: 12ch;
+      letter-spacing: -0.05em;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero p {
+      color: var(--color-text-muted);
+      max-width: 62ch;
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .btn {
+      min-height: 48px; padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-full); display: inline-flex; align-items: center; gap: 0.65rem;
+      transition: transform var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), color var(--transition-interactive);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover { background: var(--color-primary-hover); }
+
+    .btn-secondary {
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .hero-metrics {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4);
+      max-width: 44rem;
+    }
+
+    .metric {
+      background: rgba(14, 27, 48, 0.62);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric strong {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+
+    .hero-card,
+    .section-card,
+    .project-card,
+    .timeline-card,
+    .contact-card {
+      background: linear-gradient(180deg, rgba(16, 32, 56, 0.82), rgba(10, 23, 40, 0.92));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-card {
+      padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute; inset: auto -12% -18% auto;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(76,131,255,0.35), transparent 70%);
+      filter: blur(8px);
+    }
+
+    .profile-orbit {
+      display: inline-flex; align-items: center; gap: var(--space-3);
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.04);
+      color: var(--color-text-muted);
+      border: 1px solid rgba(173, 201, 255, 0.1);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-xs);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .hero-card h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-card p { color: var(--color-text-muted); margin-bottom: var(--space-6); }
+
+    .stack-list, .tag-list {
+      display: flex; flex-wrap: wrap; gap: var(--space-3);
+      list-style: none;
+    }
+
+    .stack-list li, .tag-list li {
+      padding: 0.55rem 0.85rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(171,200,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: #d8e6ff;
+      font-size: var(--text-xs);
+    }
+
+    section {
+      padding-top: var(--space-20);
+      scroll-margin-top: 100px;
+    }
+
+    .section-heading {
+      display: grid; gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .section-heading span {
+      color: #8fb2ff;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-heading h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p { color: var(--color-text-muted); max-width: 65ch; }
+
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
+    }
+
+    .section-card { padding: var(--space-8); }
+    .section-card p + p { margin-top: var(--space-4); }
+
+    .bullets {
+      list-style: none; display: grid; gap: var(--space-4);
+    }
+
+    .bullets li {
+      display: grid; grid-template-columns: auto 1fr; gap: var(--space-3);
+      align-items: start;
+      color: var(--color-text-muted);
+    }
+
+    .bullets li i { color: #90b4ff; margin-top: 0.25rem; }
+
+    .project-grid {
+      display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--space-6);
+    }
+
+    .project-card {
+      padding: var(--space-8);
+      display: grid; gap: var(--space-6);
+    }
+
+    .project-card.featured {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(75,131,255,0.14), transparent 28%),
+        linear-gradient(180deg, rgba(16, 32, 56, 0.92), rgba(10, 23, 40, 0.96));
+    }
+
+    .project-top {
+      display: flex; justify-content: space-between; gap: var(--space-4); align-items: start;
+    }
+
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-3);
+    }
+
+    .project-card p { color: var(--color-text-muted); }
+
+    .project-meta {
+      display: flex; flex-wrap: wrap; gap: var(--space-3);
+      font-size: var(--text-xs); color: #d6e4ff;
+    }
+
+    .project-meta span {
+      padding: 0.45rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(171,200,255,0.1);
+    }
+
+    .process-list {
+      list-style: none;
+      display: grid; gap: var(--space-4);
+    }
+
+    .process-list li {
+      display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: start;
+      padding-top: var(--space-4); border-top: 1px solid rgba(171,200,255,0.1);
+    }
+
+    .process-list li:first-child { padding-top: 0; border-top: none; }
+
+    .process-number {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(75,131,255,0.14); color: #cfe0ff; font-size: var(--text-sm); font-weight: 700;
+    }
+
+    .mini-projects {
+      display: grid; gap: var(--space-6);
+    }
+
+    .mini-project {
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: rgba(13, 26, 44, 0.78);
+    }
+
+    .mini-project h3 {
+      font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-3);
+    }
+
+    .timeline {
+      display: grid; gap: var(--space-5);
+    }
+
+    .timeline-card {
+      padding: var(--space-6);
+      display: grid; gap: var(--space-3);
+    }
+
+    .timeline-card small {
+      color: #8fb2ff; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--text-xs);
+    }
+
+    .timeline-card h3 {
+      font-size: var(--text-lg);
+      font-family: var(--font-display);
+    }
+
+    .contact-card {
+      padding: var(--space-8);
+      display: grid; gap: var(--space-5);
+      align-items: center;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .contact-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-card p { color: var(--color-text-muted); }
+
+    .contact-links {
+      display: grid; gap: var(--space-4);
+    }
+
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 56px;
+      padding: 0.95rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(171,200,255,0.12);
+      background: rgba(255,255,255,0.03);
+    }
+
+    footer {
+      padding: var(--space-10) 0 var(--space-8);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .project-grid, .contact-card { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-metrics { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      h1 { max-width: 9ch; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .reveal.visible { opacity: 1; transform: none; transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 18L12 5L20 18" />
+            <path d="M8.2 14h7.6" />
+          </svg>
+        </span>
+        <span>Trevabo Da Silva</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><i data-lucide="sparkles"></i> UERJ · dados · desenvolvimento</span>
+          <h1>Construindo projetos com dados, código e contexto real.</h1>
+          <p>
+            Sou estudante de Ciência da Computação na UERJ e gosto de transformar dados brutos em sistemas úteis. Meu interesse está em análise de dados, automação, SQL, Python e aplicações que conectam coleta, tratamento e entrega de informação para usuários reais.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/Trevabo" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="github"></i>
+              Ver GitHub
+            </a>
+            <a class="btn btn-secondary" href="#projetos">
+              <i data-lucide="arrow-down"></i>
+              Explorar projetos
+            </a>
+          </div>
+          <div class="hero-metrics" aria-label="Resumo rápido">
+            <article class="metric">
+              <strong>UERJ</strong>
+              <span>Ciência da Computação e interesse crescente em dados.</span>
+            </article>
+            <article class="metric">
+              <strong>Python + SQL</strong>
+              <span>Extração, padronização, processamento e armazenamento.</span>
+            </article>
+            <article class="metric">
+              <strong>Discord bots</strong>
+              <span>Sistemas voltados para uso prático em comunidade.</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="Perfil profissional">
+          <div class="profile-orbit"><i data-lucide="stars"></i> céu noturno · dados aplicados</div>
+          <h2>Perfil</h2>
+          <p>
+            Gosto de projetos em que o dado não fica só em planilha: ele vira regra, cálculo, produto e experiência. Meu foco é entender a origem da informação, padronizar o que chega de múltiplas fontes e transformar isso em algo utilizável.
+          </p>
+          <ul class="stack-list" role="list">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Pandas</li>
+            <li>SQLite3</li>
+            <li>Discord.py</li>
+            <li>Processamento de dados</li>
+            <li>APIs & scraping</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Sobre</span>
+          <h2>Portfólio para mostrar processo, não só resultado.</h2>
+          <p>
+            Quero que este site funcione como uma vitrine de projetos que mostram raciocínio técnico, organização e capacidade de transformar dados dispersos em aplicações funcionais.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article class="section-card reveal">
+            <p>
+              Meu interesse principal está na área de dados, especialmente em projetos que começam com extração de informação, passam por limpeza e padronização, aplicam regras próprias de cálculo e terminam em uma entrega útil para o usuário.
+            </p>
+            <p>
+              Também gosto de trabalhar em produtos que unem backend, banco de dados e integração com plataformas externas. O que mais me atrai é quando o dado precisa ser entendido antes de ser usado.
+            </p>
+          </article>
+          <article class="section-card reveal">
+            <ul class="bullets" role="list">
+              <li><i data-lucide="database"></i><span>Trabalho com extração, organização e armazenamento de dados vindos de fontes diferentes.</span></li>
+              <li><i data-lucide="brain-circuit"></i><span>Gosto de definir regras e fórmulas para transformar métricas brutas em informação interpretável.</span></li>
+              <li><i data-lucide="workflow"></i><span>Tenho interesse em sistemas completos: pipeline, banco de dados, automação e consumo via interface ou bot.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Projetos</span>
+          <h2>Projetos que conectam coleta, regra e produto.</h2>
+          <p>
+            Minha ideia é destacar trabalhos em que a engenharia do processo importa tanto quanto a interface final, principalmente quando há tratamento de dados e definição de regras próprias.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured reveal">
+            <div class="project-top">
+              <div>
+                <div class="project-meta">
+                  <span>Projeto em dupla</span>
+                  <span>Python · SQL · Discord</span>
+                  <span>League of Legends</span>
+                </div>
+                <h3>FFL Vercel</h3>
+                <p>
+                  Um jogo de cartas de League of Legends para Discord, desenvolvido em conjunto com um amigo. As cartas são geradas a partir da extração de métricas de partidas oficiais ao redor do mundo, com processamento, padronização e aplicação de fórmulas próprias para atribuir valores aos jogadores de uma temporada.
+                </p>
+              </div>
+              <a class="btn btn-secondary" href="https://github.com/Trevabo/FFL-VERCEL" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="external-link"></i>
+                Repositório
+              </a>
+            </div>
+
+            <ul class="tag-list" role="list">
+              <li>sqlite3</li>
+              <li>pandas</li>
+              <li>discord</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>Extração de dados</li>
+              <li>Padronização</li>
+            </ul>
+
+            <div>
+              <h4 style="font-size: var(--text-lg); margin-bottom: var(--space-4);">Pipeline do projeto</h4>
+              <ol class="process-list">
+                <li>
+                  <span class="process-number">1</span>
+                  <div>
+                    <strong>Coleta</strong>
+                    <p>Extração de dados brutos em diferentes sites com métricas de partidas oficiais de LoL ao redor do mundo.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">2</span>
+                  <div>
+                    <strong>Tratamento</strong>
+                    <p>Padronização dos campos e ajuste dos dados para um formato comum, já que cada fonte entrega informações de maneira diferente.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">3</span>
+                  <div>
+                    <strong>Cálculo</strong>
+                    <p>Aplicação das fórmulas criadas por vocês para gerar os atributos e valores das cartas dos jogadores por temporada.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="process-number">4</span>
+                  <div>
+                    <strong>Entrega</strong>
+                    <p>Armazenamento em banco de dados e disponibilização das cartas via bot no Discord, desde que o bot esteja ativo no servidor.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </article>
+
+          <div class="mini-projects">
+            <article class="mini-project reveal">
+              <div class="project-meta"><span>Ruby · IA · SQL</span></div>
+              <h3>Job Analyzer UERJ</h3>
+              <p>
+                Projeto voltado à análise e sugestão de caminhos de carreira com base na grade curricular de Ciência da Computação da UERJ, combinando IA e banco de dados.
+              </p>
+            </article>
+
+            <article class="mini-project reveal">
+              <div class="project-meta"><span>Curadoria</span><span>Portfólio vivo</span></div>
+              <h3>Seleção consciente</h3>
+              <p>
+                Este portfólio prioriza projetos com contexto real, integração de dados e construção prática. Exercícios isolados de faculdade não entram como destaque principal.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trajetoria">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Trajetória</span>
+          <h2>Como eu penso um projeto.</h2>
+          <p>
+            Gosto de trabalhar em etapas claras, com atenção tanto à origem do dado quanto ao formato final de consumo. Meu foco não é só fazer funcionar, mas fazer sentido.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <small>Etapa 1</small>
+            <h3>Entender a fonte</h3>
+            <p>Antes de qualquer modelagem, eu procuro entender como os dados são expostos, quais campos variam e o que realmente pode ser aproveitado.</p>
+          </article>
+          <article class="timeline-card reveal">
+            <small>Etapa 2</small>
+            <h3>Normalizar para decidir</h3>
+            <p>Padronizar dados de múltiplas origens é parte central do processo, porque a regra só funciona bem quando a base está consistente.</p>
+          </article>
+          <article class="timeline-card reveal">
+            <small>Etapa 3</small>
+            <h3>Transformar em produto</h3>
+            <p>Depois da lógica e do armazenamento, gosto de pensar no uso real: como a informação chega ao usuário e como a experiência final faz sentido.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <h2>Aberto a projetos, conexões e oportunidades na área de dados.</h2>
+            <p>
+              Este portfólio foi pensado para crescer com novos projetos. A base já está aqui: dados, lógica, organização e vontade de construir soluções úteis.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="https://github.com/Trevabo" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+            <a class="contact-link" href="mailto:trevabo@gmail.com">
+              <span>E-mail</span>
+              <i data-lucide="mail"></i>
+            </a>
+            <a class="contact-link" href="#inicio">
+              <span>Voltar ao topo</span>
+              <i data-lucide="arrow-up"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Feito para apresentar projetos com contexto, processo e direção técnica.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const toggle = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+    let currentTheme = 'dark';
+
+    function setTheme(theme) {
+      currentTheme = theme;
+      root.setAttribute('data-theme', theme);
+      toggle.innerHTML = theme === 'dark'
+        ? '<i data-lucide="moon"></i>'
+        : '<i data-lucide="sun"></i>';
+      lucide.createIcons();
+    }
+
+    toggle.addEventListener('click', () => {
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    setTheme('dark');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
