@@ -1,773 +1,298 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yago Pereira Da Silva — Portfólio</title>
-  <meta name="description" content="Portfólio de Yago Pereira Da Silva, estudante de Ciência da Computação na UERJ com interesse em dados, automação e projetos práticos com Python, SQL e desenvolvimento web." />
-  <meta property="og:title" content="Yago Pereira Da Silva — Portfólio" />
-  <meta property="og:description" content="Projetos, trajetória e stack de Yago Pereira Da Silva, estudante de Ciência da Computação na UERJ com foco em dados e desenvolvimento." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
-      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
-      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-      --color-bg: #eef3ff;
-      --color-surface: #f7f9ff;
-      --color-surface-2: #ffffff;
-      --color-surface-offset: #e3ebff;
-      --color-border: rgba(10, 30, 75, 0.12);
-      --color-text: #0e1830;
-      --color-text-muted: #51607e;
-      --color-text-faint: #7f8ba3;
-      --color-primary: #1e5eff;
-      --color-primary-hover: #1747c2;
-      --color-primary-highlight: rgba(30, 94, 255, 0.12);
-      --color-success: #2e9d66;
-      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 999px;
-      --shadow-sm: 0 8px 24px rgba(14, 24, 48, 0.06);
-      --shadow-md: 0 18px 40px rgba(14, 24, 48, 0.10);
-      --content-default: 1120px;
-      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yago Pereira Da Silva — Ciência da Computação · UERJ</title>
+<meta name="description" content="Portfólio de Yago Pereira Da Silva, estudante de Ciência da Computação na UERJ, com foco em dados, Python, SQL e automação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: '#ffffff',
+          foreground: '#000000',
+          accent: '#ff4f00',
+          muted: '#666666',
+        },
+        fontFamily: { mono: ['JetBrains Mono', 'monospace'] },
+      }
     }
-
-    [data-theme="dark"] {
-      --color-bg: #06111f;
-      --color-surface: #0b1728;
-      --color-surface-2: #102038;
-      --color-surface-offset: #132744;
-      --color-border: rgba(171, 200, 255, 0.14);
-      --color-text: #edf4ff;
-      --color-text-muted: #a5b7d6;
-      --color-text-faint: #7183a3;
-      --color-primary: #4b83ff;
-      --color-primary-hover: #76a0ff;
-      --color-primary-highlight: rgba(75, 131, 255, 0.12);
-      --color-success: #68d8a4;
-      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.24);
-      --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.34);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.6;
-      color: var(--color-text);
-      background:
-        radial-gradient(circle at top, rgba(75, 131, 255, 0.18), transparent 32%),
-        radial-gradient(circle at 80% 18%, rgba(105, 154, 255, 0.10), transparent 24%),
-        linear-gradient(180deg, #07111f 0%, #081321 34%, #06111f 100%);
-      background-color: var(--color-bg);
-    }
-
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; border: none; background: none; }
-    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-
-    .skip-link {
-      position: absolute; left: -999px; top: 0;
-      background: var(--color-primary); color: white; padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-md); z-index: 100;
-    }
-    .skip-link:focus { left: var(--space-4); top: var(--space-4); }
-
-    .container { width: min(calc(100% - 2rem), var(--content-default)); margin-inline: auto; }
-
-    header {
-      position: sticky; top: 0; z-index: 20;
-      backdrop-filter: blur(18px);
-      background: rgba(6, 17, 31, 0.72);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      min-height: 76px; gap: var(--space-4);
-    }
-
-    .brand {
-      display: flex; align-items: center; gap: var(--space-3);
-      font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.02em;
-    }
-
-    .brand-mark {
-      width: 38px; height: 38px; border-radius: 12px;
-      display: grid; place-items: center;
-      border: 1px solid rgba(155, 186, 255, 0.24);
-      background: linear-gradient(180deg, rgba(77, 130, 255, 0.24), rgba(77, 130, 255, 0.06));
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-links {
-      display: flex; align-items: center; gap: var(--space-5);
-      color: var(--color-text-muted); font-size: var(--text-sm);
-    }
-
-    .nav-links a:hover { color: var(--color-text); }
-
-    .theme-toggle {
-      width: 44px; height: 44px; border-radius: var(--radius-full);
-      border: 1px solid var(--color-border);
-      display: grid; place-items: center;
-      color: var(--color-text-muted);
-      background: rgba(255,255,255,0.02);
-    }
-
-    main { padding-bottom: var(--space-24); }
-
-    .hero {
-      padding: clamp(5rem, 10vw, 8rem) 0 var(--space-20);
-    }
-
-    .hero-grid {
-      display: grid; gap: var(--space-10);
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: var(--space-2);
-      padding: 0.5rem 0.875rem;
-      border-radius: var(--radius-full);
-      background: var(--color-primary-highlight);
-      color: #c7d9ff;
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(146, 181, 255, 0.16);
-      margin-bottom: var(--space-5);
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 0.98;
-      max-width: 12ch;
-      letter-spacing: -0.05em;
-      margin-bottom: var(--space-6);
-    }
-
-    .hero p {
-      color: var(--color-text-muted);
-      max-width: 62ch;
-      margin-bottom: var(--space-8);
-    }
-
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: var(--space-4);
-      margin-bottom: var(--space-8);
-    }
-
-    .btn {
-      min-height: 48px; padding: 0.9rem 1.2rem;
-      border-radius: var(--radius-full); display: inline-flex; align-items: center; gap: 0.65rem;
-      transition: transform var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), color var(--transition-interactive);
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
-      background: var(--color-primary);
-      color: white;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-primary:hover { background: var(--color-primary-hover); }
-
-    .btn-secondary {
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .hero-metrics {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4);
-      max-width: 44rem;
-    }
-
-    .metric {
-      background: rgba(14, 27, 48, 0.62);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .metric strong {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      display: block;
-      margin-bottom: var(--space-2);
-    }
-
-    .hero-card,
-    .section-card,
-    .project-card,
-    .timeline-card,
-    .contact-card {
-      background: linear-gradient(180deg, rgba(16, 32, 56, 0.82), rgba(10, 23, 40, 0.92));
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero-card {
-      padding: var(--space-8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute; inset: auto -12% -18% auto;
-      width: 220px; height: 220px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(76,131,255,0.35), transparent 70%);
-      filter: blur(8px);
-    }
-
-    .profile-orbit {
-      display: inline-flex; align-items: center; gap: var(--space-3);
-      padding: 0.6rem 0.85rem;
-      border-radius: var(--radius-full);
-      background: rgba(255,255,255,0.04);
-      color: var(--color-text-muted);
-      border: 1px solid rgba(173, 201, 255, 0.1);
-      margin-bottom: var(--space-6);
-      font-size: var(--text-xs);
-      text-transform: uppercase; letter-spacing: 0.08em;
-    }
-
-    .hero-card h2 {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-4);
-    }
-
-    .hero-card p { color: var(--color-text-muted); margin-bottom: var(--space-6); }
-
-    .stack-list, .tag-list {
-      display: flex; flex-wrap: wrap; gap: var(--space-3);
-      list-style: none;
-    }
-
-    .stack-list li, .tag-list li {
-      padding: 0.55rem 0.85rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(171,200,255,0.14);
-      background: rgba(255,255,255,0.03);
-      color: #d8e6ff;
-      font-size: var(--text-xs);
-    }
-
-    section {
-      padding-top: var(--space-20);
-      scroll-margin-top: 100px;
-    }
-
-    .section-heading {
-      display: grid; gap: var(--space-4);
-      margin-bottom: var(--space-8);
-    }
-
-    .section-heading span {
-      color: #8fb2ff;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .section-heading h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3.4rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
-    }
-
-    .section-heading p { color: var(--color-text-muted); max-width: 65ch; }
-
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
-    }
-
-    .section-card { padding: var(--space-8); }
-    .section-card p + p { margin-top: var(--space-4); }
-
-    .bullets {
-      list-style: none; display: grid; gap: var(--space-4);
-    }
-
-    .bullets li {
-      display: grid; grid-template-columns: auto 1fr; gap: var(--space-3);
-      align-items: start;
-      color: var(--color-text-muted);
-    }
-
-    .bullets li i { color: #90b4ff; margin-top: 0.25rem; }
-
-    .project-grid {
-      display: grid; grid-template-columns: 1.3fr 0.7fr; gap: var(--space-6);
-    }
-
-    .project-card {
-      padding: var(--space-8);
-      display: grid; gap: var(--space-6);
-    }
-
-    .project-card.featured {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top right, rgba(75,131,255,0.14), transparent 28%),
-        linear-gradient(180deg, rgba(16, 32, 56, 0.92), rgba(10, 23, 40, 0.96));
-    }
-
-    .project-top {
-      display: flex; justify-content: space-between; gap: var(--space-4); align-items: start;
-    }
-
-    .project-card h3 {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-3);
-    }
-
-    .project-card p { color: var(--color-text-muted); }
-
-    .project-meta {
-      display: flex; flex-wrap: wrap; gap: var(--space-3);
-      font-size: var(--text-xs); color: #d6e4ff;
-    }
-
-    .project-meta span {
-      padding: 0.45rem 0.7rem;
-      border-radius: var(--radius-full);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(171,200,255,0.1);
-    }
-
-    .process-list {
-      list-style: none;
-      display: grid; gap: var(--space-4);
-    }
-
-    .process-list li {
-      display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: start;
-      padding-top: var(--space-4); border-top: 1px solid rgba(171,200,255,0.1);
-    }
-
-    .process-list li:first-child { padding-top: 0; border-top: none; }
-
-    .process-number {
-      width: 34px; height: 34px; border-radius: 50%;
-      display: grid; place-items: center;
-      background: rgba(75,131,255,0.14); color: #cfe0ff; font-size: var(--text-sm); font-weight: 700;
-    }
-
-    .mini-projects {
-      display: grid; gap: var(--space-6);
-    }
-
-    .mini-project {
-      padding: var(--space-6);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border);
-      background: rgba(13, 26, 44, 0.78);
-    }
-
-    .mini-project h3 {
-      font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-3);
-    }
-
-    .timeline {
-      display: grid; gap: var(--space-5);
-    }
-
-    .timeline-card {
-      padding: var(--space-6);
-      display: grid; gap: var(--space-3);
-    }
-
-    .timeline-card small {
-      color: #8fb2ff; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--text-xs);
-    }
-
-    .timeline-card h3 {
-      font-size: var(--text-lg);
-      font-family: var(--font-display);
-    }
-
-    .contact-card {
-      padding: var(--space-8);
-      display: grid; gap: var(--space-5);
-      align-items: center;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .contact-card h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.05;
-      margin-bottom: var(--space-4);
-    }
-
-    .contact-card p { color: var(--color-text-muted); }
-
-    .contact-links {
-      display: grid; gap: var(--space-4);
-    }
-
-    .contact-link {
-      display: flex; align-items: center; justify-content: space-between;
-      min-height: 56px;
-      padding: 0.95rem 1rem;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(171,200,255,0.12);
-      background: rgba(255,255,255,0.03);
-    }
-
-    footer {
-      padding: var(--space-10) 0 var(--space-8);
-      color: var(--color-text-faint);
-      font-size: var(--text-sm);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid, .about-grid, .project-grid, .contact-card { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-
-    @media (max-width: 640px) {
-      .hero-metrics { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn { justify-content: center; }
-      h1 { max-width: 9ch; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal, .reveal.visible { opacity: 1; transform: none; transition: none; }
-      .btn:hover { transform: none; }
-    }
-  </style>
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'JetBrains Mono', monospace; }
+  ::selection { background: #ff4f00; color: #fff; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .cursor-blink { animation: blink 1s step-end infinite; }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .animate-reveal { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  /* Nav link indicator (Brittany-style) */
+  .nav-link { display: flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #666; transition: color 0.2s; padding: 0.25rem 0; }
+  .nav-link .nav-bar { display: inline-block; height: 2px; width: 32px; background: #999; transition: all 0.2s; }
+  .nav-link:hover, .nav-link.active { color: #000; }
+  .nav-link:hover .nav-bar, .nav-link.active .nav-bar { width: 64px; background: #ff4f00; }
+
+  /* Project card hover (Brittany-style group hover) */
+  .project-row:hover .project-title { color: #ff4f00; }
+  .project-row:hover .project-thumb { border-color: #ff4f00; }
+</style>
 </head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div style="background: var(--color-warning); color: #fff; text-align: center; padding: var(--space-2) var(--space-4); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.02em;">
-    🚧 Este portfólio está em construção — novos projetos e seções em breve.
-  </div>
-<header>
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 18L12 5L20 18" />
-            <path d="M8.2 14h7.6" />
-          </svg>
-        </span>
-        <span>Yago Pereira Da Silva</span>
-      </a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#trajetoria">Trajetória</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
-        <i data-lucide="moon"></i>
-      </button>
-    </div>
-  </header>
+<body class="bg-background text-foreground antialiased">
 
-  <main id="conteudo">
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <span class="eyebrow"><i data-lucide="sparkles"></i> UERJ · dados · desenvolvimento</span>
-          <h1>Construindo projetos com dados, código e contexto real.</h1>
-          <p>
-            Sou estudante de Ciência da Computação na UERJ e gosto de transformar dados brutos em sistemas úteis. Meu interesse está em análise de dados, automação, SQL, Python e aplicações que conectam coleta, tratamento e entrega de informação para usuários reais.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://github.com/Trevabo" target="_blank" rel="noopener noreferrer">
-              <i data-lucide="github"></i>
-              Ver GitHub
-            </a>
-            <a class="btn btn-secondary" href="#projetos">
-              <i data-lucide="arrow-down"></i>
-              Explorar projetos
-            </a>
-          </div>
-          
+<div class="mx-auto max-w-screen-xl px-6 md:px-12 lg:px-24 py-12 md:py-0">
+  <div class="lg:flex lg:justify-between lg:gap-8">
+
+    <!-- LEFT: STICKY SIDEBAR -->
+    <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+      <div>
+        <div class="inline-block border-2 border-black px-2 py-1 mb-6 text-[10px] font-bold">
+          ROOT@UERJ:~$ WHOAMI
         </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-[0.9] tracking-tighter">
+          YAGO<br/>PEREIRA<br/>DA SILVA<span class="text-accent">.</span>
+        </h1>
+        <h2 class="mt-4 text-base font-bold uppercase tracking-wide">
+          Ciência da Computação · UERJ
+        </h2>
+        <p class="mt-4 max-w-xs text-sm leading-snug text-muted">
+          Construindo sistemas que conectam dados, regras e entrega real.<span class="cursor-blink">_</span>
+        </p>
 
-        <aside class="hero-card reveal" aria-label="Perfil profissional">
-          
-          <h2>Perfil</h2>
-          <p>
-            Estudante de Ciência da Computação na UERJ, com foco na área de dados. No momento, estou em busca de experiência prática para aplicar o que tenho desenvolvido em projetos reais.
-          </p>
-          <ul class="stack-list" role="list">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Pandas</li>
-            <li>Processamento de dados</li>
-            <li>APIs & scraping</li>
+        <!-- NAV -->
+        <nav class="hidden lg:block mt-16" aria-label="In-page jump links">
+          <ul class="space-y-3">
+            <li><a class="nav-link active" href="#sobre"><span class="nav-bar"></span>SOBRE</a></li>
+            <li><a class="nav-link" href="#projetos"><span class="nav-bar"></span>PROJETOS</a></li>
+            <li><a class="nav-link" href="#processo"><span class="nav-bar"></span>PROCESSO</a></li>
+            <li><a class="nav-link" href="#contato"><span class="nav-bar"></span>CONTATO</a></li>
           </ul>
-        </aside>
+        </nav>
       </div>
-    </section>
 
-    <section id="sobre">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span>Sobre</span>
-          <h2>Portfólio para mostrar processo, não só resultado.</h2>
+      <!-- SOCIALS -->
+      <ul class="mt-12 lg:mt-0 flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest">
+        <li><a href="https://github.com/Trevabo" target="_blank" rel="noopener" class="border-2 border-black px-3 py-2 hover:bg-black hover:text-white transition-colors">GH</a></li>
+        <li><a href="https://www.linkedin.com/in/yago-pereira-da-silva/" target="_blank" rel="noopener" class="border-2 border-black px-3 py-2 hover:bg-black hover:text-white transition-colors">IN</a></li>
+        <li><a href="mailto:yago15488@gmail.com" class="border-2 border-black px-3 py-2 hover:bg-accent hover:text-white hover:border-accent transition-colors">MAIL</a></li>
+      </ul>
+    </header>
+
+    <!-- RIGHT: SCROLLABLE CONTENT -->
+    <main class="pt-12 lg:w-1/2 lg:py-24">
+
+      <!-- SOBRE -->
+      <section id="sobre" class="mb-24 scroll-mt-16" aria-label="Sobre mim">
+        <div class="sticky top-0 z-20 -mx-6 mb-6 w-screen bg-background/90 backdrop-blur px-6 py-4 lg:hidden border-b-2 border-black">
+          <h2 class="text-xs font-black uppercase tracking-widest">[01] SOBRE_MIM</h2>
+        </div>
+        <h2 class="hidden lg:block text-xs font-black uppercase tracking-widest mb-6 text-muted">[01] // SOBRE_MIM.SYS</h2>
+
+        <!-- AVATAR -->
+        <div class="mb-8 flex items-center gap-5">
+          <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-black overflow-hidden bg-neutral-100 relative shrink-0">
+            <img src="SUA_FOTO.jpg" alt="Foto de Yago Pereira Da Silva" class="w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="absolute inset-0 hidden items-center justify-center text-[9px] font-bold text-muted text-center px-2">SUA_FOTO.JPG</div>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-widest text-muted leading-relaxed">
+            ./avatar<br/>--user=yago<br/><span class="text-accent">--status=online</span>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm md:text-base leading-relaxed text-muted">
           <p>
-            Quero que este site funcione como uma vitrine de projetos que mostram raciocínio técnico, organização e capacidade de transformar dados dispersos em aplicações funcionais.
+            Sou <span class="font-bold text-foreground">Yago</span>, estudante de Ciência da Computação na UERJ. Gosto de projetos que começam na <span class="font-bold text-foreground">extração de dados</span>, passam por <span class="font-bold text-foreground">limpeza e regras próprias</span>, e terminam em algo que alguém usa de verdade — um bot, uma interface, um relatório.
+          </p>
+          <p>
+            Trabalho principalmente com <span class="font-bold text-foreground">Python</span>, <span class="font-bold text-foreground">SQL</span> e ferramentas de scraping/IA. Penso o código sempre acoplado ao contexto: que decisão ele apoia, que dado ele consome, que entrega ele gera.
+          </p>
+          <p>
+            Hoje, meu interesse principal está em pipelines completos — pipeline, banco, automação e consumo via interface ou bot — onde cada peça precisa fazer sentido com a anterior.
           </p>
         </div>
-        <div class="about-grid">
-          <article class="section-card reveal">
-            <p>
-              Meu interesse principal está na área de dados, especialmente em projetos que começam com extração de informação, passam por limpeza e padronização, aplicam regras próprias de cálculo e terminam em uma entrega útil para o usuário.
-            </p>
-            <p>
-              Também gosto de trabalhar em produtos que unem backend, banco de dados e integração com plataformas externas. O que mais me atrai é quando o dado precisa ser entendido antes de ser usado.
-            </p>
-          </article>
-          <article class="section-card reveal">
-            <ul class="bullets" role="list">
-              <li><i data-lucide="database"></i><span>Trabalho com extração, organização e armazenamento de dados vindos de fontes diferentes.</span></li>
-              <li><i data-lucide="brain-circuit"></i><span>Gosto de definir regras e fórmulas para transformar métricas brutas em informação interpretável.</span></li>
-              <li><i data-lucide="workflow"></i><span>Tenho interesse em sistemas completos: pipeline, banco de dados, automação e consumo via interface ou bot.</span></li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projetos">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span>Projetos</span>
-          <h2>Projetos que conectam coleta, regra e produto.</h2>
-          <p>
-            Minha ideia é destacar trabalhos em que a engenharia do processo importa tanto quanto a interface final, principalmente quando há tratamento de dados e definição de regras próprias.
-          </p>
+      <!-- PROJETOS -->
+      <section id="projetos" class="mb-24 scroll-mt-16" aria-label="Projetos">
+        <div class="sticky top-0 z-20 -mx-6 mb-6 w-screen bg-background/90 backdrop-blur px-6 py-4 lg:hidden border-b-2 border-black">
+          <h2 class="text-xs font-black uppercase tracking-widest">[02] PROJETOS</h2>
         </div>
+        <h2 class="hidden lg:block text-xs font-black uppercase tracking-widest mb-6 text-muted">[02] // PROJETOS.LOG</h2>
 
-        <div class="project-grid">
-          <article class="project-card featured reveal">
-            <div class="project-top">
-              <div>
-                <div class="project-meta">
-                  <span>Projeto em dupla</span>
-                  <span>Python · SQL · Discord</span>
-                  <span>League of Legends</span>
+        <div class="space-y-6">
+
+          <!-- FFL -->
+          <a href="https://ffl-iota.vercel.app/" target="_blank" rel="noopener" class="project-row group block border-2 border-black p-5 hover:bg-neutral-50 transition-colors">
+            <div class="grid grid-cols-8 gap-4">
+              <div class="col-span-2">
+                <div class="project-thumb border-2 border-black aspect-video bg-black text-accent flex items-center justify-center text-[10px] font-bold transition-colors">
+                  /FFL
                 </div>
-                <h3>FFL — Fast Fight League</h3>
-                <p>
-                  Um jogo de cartas de League of Legends para Discord, desenvolvido em conjunto com um amigo. As cartas são geradas a partir da extração de métricas de partidas oficiais ao redor do mundo, com processamento, padronização e aplicação de fórmulas próprias para atribuir valores aos jogadores de uma temporada.
-                </p>
+                <span class="block mt-2 text-[9px] font-bold opacity-60">2024 — 2026</span>
               </div>
-              <a class="btn btn-secondary" href="https://ffl-iota.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <i data-lucide="external-link"></i>
-                Site
-              </a>
+              <div class="col-span-6">
+                <h3 class="project-title text-lg font-extrabold leading-tight transition-colors">
+                  FFL — FAST FIGHT LEAGUE <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
+                </h3>
+                <p class="mt-2 text-sm text-muted leading-snug">
+                  Jogo de cartas de League of Legends para Discord, em dupla. Cartas geradas a partir de extração de métricas de partidas oficiais, com processamento, padronização e fórmulas próprias para atribuir valores aos jogadores por temporada.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-bold">
+                  <span class="border border-black px-2 py-0.5">PYTHON</span>
+                  <span class="border border-black px-2 py-0.5">SQL</span>
+                  <span class="border border-black px-2 py-0.5">DISCORD</span>
+                  <span class="border border-black px-2 py-0.5">SCRAPING</span>
+                </div>
+              </div>
             </div>
+          </a>
 
-            <ul class="tag-list" role="list">
-              <li>pandas</li>
-              <li>SQL</li>
-              <li>Python</li>
-              <li>API & Scraping</li>
-              <li>Padronização</li>
-            </ul>
+          <!-- JOB ANALYZER -->
+          <a href="https://github.com/Trevabo/job-analyzer" target="_blank" rel="noopener" class="project-row group block border-2 border-black p-5 hover:bg-neutral-50 transition-colors">
+            <div class="grid grid-cols-8 gap-4">
+              <div class="col-span-2">
+                <div class="project-thumb border-2 border-black aspect-video bg-black text-accent flex items-center justify-center text-[10px] font-bold transition-colors">
+                  /JOB-AN
+                </div>
+                <span class="block mt-2 text-[9px] font-bold opacity-60">2025</span>
+              </div>
+              <div class="col-span-6">
+                <h3 class="project-title text-lg font-extrabold leading-tight transition-colors">
+                  JOB ANALYZER UERJ <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
+                </h3>
+                <p class="mt-2 text-sm text-muted leading-snug">
+                  Análise e sugestão de caminhos de carreira a partir da grade curricular de Ciência da Computação da UERJ, combinando IA e banco de dados.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-bold">
+                  <span class="border border-black px-2 py-0.5">RUBY</span>
+                  <span class="border border-black px-2 py-0.5">IA</span>
+                  <span class="border border-black px-2 py-0.5">SQL</span>
+                </div>
+              </div>
+            </div>
+          </a>
 
+          <!-- PC HELPER -->
+          <div class="project-row group block border-2 border-black p-5">
+            <div class="grid grid-cols-8 gap-4">
+              <div class="col-span-2">
+                <div class="project-thumb border-2 border-black aspect-video bg-black text-accent flex items-center justify-center text-[10px] font-bold transition-colors">
+                  /PC-HELPER
+                </div>
+                <span class="block mt-2 text-[9px] font-bold opacity-60">[EM CONSTRUÇÃO]</span>
+              </div>
+              <div class="col-span-6">
+                <h3 class="project-title text-lg font-extrabold leading-tight transition-colors">
+                  PC HELPER
+                </h3>
+                <p class="mt-2 text-sm text-muted leading-snug">
+                  Projeto em Python com scraping, banco de dados e tratamento. Devolve ao usuário todas as peças necessárias para montar um PC, com link de compra, cupom de desconto, valor à vista e parcelado.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-bold">
+                  <span class="border border-black px-2 py-0.5">PYTHON</span>
+                  <span class="border border-black px-2 py-0.5">SCRAPING</span>
+                  <span class="border border-black px-2 py-0.5">DB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROCESSO -->
+      <section id="processo" class="mb-24 scroll-mt-16" aria-label="Processo">
+        <div class="sticky top-0 z-20 -mx-6 mb-6 w-screen bg-background/90 backdrop-blur px-6 py-4 lg:hidden border-b-2 border-black">
+          <h2 class="text-xs font-black uppercase tracking-widest">[03] PROCESSO</h2>
+        </div>
+        <h2 class="hidden lg:block text-xs font-black uppercase tracking-widest mb-6 text-muted">[03] // PROCESSO.SH</h2>
+
+        <ol class="space-y-4">
+          <li class="border-2 border-black p-5 flex gap-5">
+            <div class="text-3xl font-black text-accent leading-none">01</div>
             <div>
-              <h4 style="font-size: var(--text-lg); margin-bottom: var(--space-4);">Pipeline do projeto</h4>
-              <ol class="process-list">
-                <li>
-                  <span class="process-number">1</span>
-                  <div>
-                    <strong>Coleta</strong>
-                    <p>Extração de dados brutos em diferentes sites com métricas de partidas oficiais de LoL ao redor do mundo.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="process-number">2</span>
-                  <div>
-                    <strong>Tratamento</strong>
-                    <p>Padronização dos campos e ajuste dos dados para um formato comum, já que cada fonte entrega informações de maneira diferente.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="process-number">3</span>
-                  <div>
-                    <strong>Cálculo</strong>
-                    <p>Aplicação das fórmulas criadas por vocês para gerar os atributos e valores das cartas dos jogadores por temporada.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="process-number">4</span>
-                  <div>
-                    <strong>Entrega</strong>
-                    <p>Armazenamento em banco de dados e disponibilização das cartas via bot no Discord, desde que o bot esteja ativo no servidor.</p>
-                  </div>
-                </li>
-              </ol>
+              <h4 class="font-bold uppercase mb-2">Entender a fonte</h4>
+              <p class="text-sm text-muted leading-snug">Antes de qualquer modelagem, entendo como os dados são expostos, quais campos variam e o que pode ser aproveitado.</p>
             </div>
-          </article>
+          </li>
+          <li class="border-2 border-black p-5 flex gap-5">
+            <div class="text-3xl font-black text-accent leading-none">02</div>
+            <div>
+              <h4 class="font-bold uppercase mb-2">Normalizar para decidir</h4>
+              <p class="text-sm text-muted leading-snug">Padronizar dados de múltiplas origens é central — a regra só funciona bem quando a base está consistente.</p>
+            </div>
+          </li>
+          <li class="border-2 border-black p-5 flex gap-5 bg-black text-white">
+            <div class="text-3xl font-black text-accent leading-none">03</div>
+            <div>
+              <h4 class="font-bold uppercase mb-2">Transformar em produto</h4>
+              <p class="text-sm text-gray-400 leading-snug">Depois da lógica e do armazenamento, penso no uso real: como a informação chega ao usuário e a experiência final faz sentido.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-          <div class="mini-projects">
-            <article class="mini-project reveal">
-              <div class="project-meta"><span>Ruby · IA · SQL</span></div>
-              <h3>Job Analyzer UERJ</h3>
-              <p>
-                Projeto voltado à análise e sugestão de caminhos de carreira com base na grade curricular de Ciência da Computação da UERJ, combinando IA e banco de dados.
-              </p>
-              <a class="btn btn-secondary" href="https://github.com/Trevabo/job-analyzer" target="_blank" rel="noopener noreferrer" style="margin-top: var(--space-3); font-size: var(--text-sm);">
-                <i data-lucide="github"></i>
-                Repositório
-              </a>
-            </article>
-
-            <article class="mini-project reveal">
-              <div class="project-meta"><span>Python</span><span>Scraping · Banco de Dados</span><span>Em construção</span></div>
-              <h3>Auxiliador de Montagem de PC</h3>
-              <p>
-                Projeto em Python que envolve scraping, banco de dados e tratamento de dados. Vai funcionar como um auxiliador de montagem de computador: retorna ao usuário todas as peças que ele precisa comprar, com o link direto de compra, cupom de desconto, valor à vista e parcelado. Ainda em construção.
-              </p>
-            </article>
-          </div>
+      <!-- CONTATO -->
+      <section id="contato" class="mb-24 scroll-mt-16" aria-label="Contato">
+        <div class="sticky top-0 z-20 -mx-6 mb-6 w-screen bg-background/90 backdrop-blur px-6 py-4 lg:hidden border-b-2 border-black">
+          <h2 class="text-xs font-black uppercase tracking-widest">[04] CONTATO</h2>
         </div>
-      </div>
-    </section>
+        <h2 class="hidden lg:block text-xs font-black uppercase tracking-widest mb-6 text-muted">[04] // CONTATO.EXE</h2>
 
-    <section id="trajetoria">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span>Trajetória</span>
-          <h2>Como eu penso um projeto.</h2>
-          <p>
-            Gosto de trabalhar em etapas claras, com atenção tanto à origem do dado quanto ao formato final de consumo. Meu foco não é só fazer funcionar, mas fazer sentido.
-          </p>
+        <p class="text-sm text-muted mb-6 leading-relaxed">
+          Aberto a projetos, conexões e oportunidades na área de dados. A melhor forma de falar comigo é por <span class="font-bold text-foreground">e-mail</span> — respondo em poucos dias.
+        </p>
+
+        <div class="space-y-3">
+          <a href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener" class="flex border-2 border-black overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
+            <div class="bg-black text-white px-4 py-3 font-bold text-xs flex items-center w-28">GITHUB</div>
+            <div class="flex-1 px-4 py-3 flex items-center justify-between text-sm">
+              <span>@SEU_USUARIO</span><span class="text-[10px]">→</span>
+            </div>
+          </a>
+          <a href="mailto:SEU@EMAIL.COM" class="flex border-2 border-black overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
+            <div class="bg-accent text-white px-4 py-3 font-bold text-xs flex items-center w-28">EMAIL</div>
+            <div class="flex-1 px-4 py-3 flex items-center justify-between text-sm">
+              <span>SEU@EMAIL.COM</span><span class="text-[10px]">→</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener" class="flex border-2 border-black overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
+            <div class="bg-black text-white px-4 py-3 font-bold text-xs flex items-center w-28">LINKEDIN</div>
+            <div class="flex-1 px-4 py-3 flex items-center justify-between text-sm">
+              <span>/in/SEU_PERFIL</span><span class="text-[10px]">→</span>
+            </div>
+          </a>
         </div>
-        <div class="timeline">
-          <article class="timeline-card reveal">
-            <small>Etapa 1</small>
-            <h3>Entender a fonte</h3>
-            <p>Antes de qualquer modelagem, eu procuro entender como os dados são expostos, quais campos variam e o que realmente pode ser aproveitado.</p>
-          </article>
-          <article class="timeline-card reveal">
-            <small>Etapa 2</small>
-            <h3>Normalizar para decidir</h3>
-            <p>Padronizar dados de múltiplas origens é parte central do processo, porque a regra só funciona bem quando a base está consistente.</p>
-          </article>
-          <article class="timeline-card reveal">
-            <small>Etapa 3</small>
-            <h3>Transformar em produto</h3>
-            <p>Depois da lógica e do armazenamento, gosto de pensar no uso real: como a informação chega ao usuário e como a experiência final faz sentido.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contato">
-      <div class="container">
-        <div class="contact-card reveal">
-          <div>
-            <h2>Aberto a projetos, conexões e oportunidades na área de dados.</h2>
-            <p>
-              Este portfólio foi pensado para crescer com novos projetos. A base já está aqui: dados, lógica, organização e vontade de construir soluções úteis.
-            </p>
-          </div>
-          <div class="contact-links">
-            <a class="contact-link" href="https://github.com/Trevabo" target="_blank" rel="noopener noreferrer">
-              <span>GitHub</span>
-              <i data-lucide="arrow-up-right"></i>
-            </a>
-            <a class="contact-link" href="mailto:trevabo@gmail.com">
-              <span>E-mail</span>
-              <i data-lucide="mail"></i>
-            </a>
-            <a class="contact-link" href="#inicio">
-              <span>Voltar ao topo</span>
-              <i data-lucide="arrow-up"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+      <footer class="pb-12 text-[10px] font-bold uppercase tracking-widest text-muted">
+        <p>© 2026 YAGO PEREIRA DA SILVA — BUILT_WITH_SYSTEM_MONO // STATUS: ONLINE</p>
+      </footer>
 
-  <footer>
-    <div class="container">
-      <p>Feito para apresentar projetos com contexto, processo e direção técnica.</p>
-    </div>
-  </footer>
+    </main>
+  </div>
+</div>
 
-  <script>
-    lucide.createIcons();
-
-    const toggle = document.querySelector('[data-theme-toggle]');
-    const root = document.documentElement;
-    let currentTheme = 'dark';
-
-    function setTheme(theme) {
-      currentTheme = theme;
-      root.setAttribute('data-theme', theme);
-      toggle.innerHTML = theme === 'dark'
-        ? '<i data-lucide="moon"></i>'
-        : '<i data-lucide="sun"></i>';
-      lucide.createIcons();
-    }
-
-    toggle.addEventListener('click', () => {
-      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+<script>
+  // Scroll-spy: highlight nav link of current section
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('.nav-link');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
     });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
 
-    setTheme('dark');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-  </script>
 </body>
 </html>
