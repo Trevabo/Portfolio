@@ -1,281 +1,331 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yago Pereira Da Silva — Ciência da Computação · UERJ</title>
-<meta name="description" content="Portfólio de Yago Pereira Da Silva, estudante de Ciência da Computação na UERJ, com foco em dados, Python, SQL e automação.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YAGO PEREIRA DA SILVA — PORTFÓLIO</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        background: '#ffffff',
-        foreground: '#000000',
-        accent: '#ff4f00',
-        muted: '#666666',
-      },
-      fontFamily: { mono: ['JetBrains Mono', 'monospace'] },
-    }
-  }
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-html { scroll-behavior: smooth; }
-body { font-family: 'JetBrains Mono', monospace; }
-::selection { background: #ff4f00; color: #fff; }
-@keyframes blink { 50% { opacity: 0; } }
-.cursor-blink { animation: blink 1s step-end infinite; }
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.animate-reveal { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  :root { --accent: #ff4f00; }
+  * { font-family: 'JetBrains Mono', monospace; }
+  body { background: #fcfbf8; color: #0a0a0a; }
+  .text-muted { color: #6b6b6b; }
+  .text-accent { color: var(--accent); }
+  .bg-accent { background: var(--accent); }
 
-.nav-link { display: flex; align-items: center; gap: 0.75rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #666; transition: color 0.2s; padding: 0.4rem 0; }
-.nav-link .nav-bar { display: inline-block; height: 2px; width: 32px; background: #999; transition: all 0.2s; }
-.nav-link:hover, .nav-link.active { color: #000; }
-.nav-link:hover .nav-bar, .nav-link.active .nav-bar { width: 64px; background: #ff4f00; }
+  /* Nav links da sidebar */
+  .nav-link {
+    position: relative;
+    padding: 6px 0 6px 14px;
+    color: #0a0a0a;
+    text-decoration: none;
+    transition: color .15s ease, transform .15s ease;
+  }
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 50%;
+    width: 6px; height: 2px;
+    background: transparent;
+    transform: translateY(-50%);
+    transition: background .15s ease, width .15s ease;
+  }
+  .nav-link:hover,
+  .nav-link.active { color: var(--accent); }
+  .nav-link:hover::before,
+  .nav-link.active::before { background: var(--accent); width: 10px; }
 
-.project-row:hover .project-title { color: #ff4f00; }
-.project-row:hover .project-thumb { border-color: #ff4f00; }
+  .tag { display:inline-block; border:1px solid #0a0a0a; padding:2px 8px; font-size:10px; letter-spacing:.05em; }
+  .card-hover { transition: transform .15s ease; }
+  .card-hover:hover { transform: translate(4px,-4px); }
 
-/* Layout shell 30/70 */
-.shell { display: block; }
-@media (min-width: 768px) {
-  .shell { display: grid; grid-template-columns: 30% 70%; }
-  .sidebar { position: fixed; top: 0; left: 0; width: 30%; height: 100vh; border-right: 2px solid #000; }
-  .content { grid-column: 2; min-width: 0; }
-}
-.exp-bullet::before { content: "›"; color: #ff4f00; margin-right: 0.6rem; font-weight: 800; }
+  /* Mobile: sidebar vira topo */
+  @media (max-width: 767px) {
+    .sidebar { position: static !important; width: 100% !important; height: auto !important; }
+    .content { margin-left: 0 !important; width: 100% !important; }
+  }
 </style>
 </head>
-<body class="bg-background text-foreground">
+<body>
 
-<div class="shell">
+<!-- ============ SIDEBAR 30% ============ -->
+<aside class="sidebar fixed top-0 left-0 h-screen w-[30%] flex flex-col justify-between p-6">
+  <div class="space-y-4">
+    <div class="text-[10px] text-muted tracking-widest">// INDEX.HTML</div>
+    <div class="text-[10px] text-muted">ROOT@UERJ:~$</div>
+    <h1 class="text-xl md:text-2xl font-bold leading-tight">
+      YAGO PEREIRA<br/>DA SILVA.
+    </h1>
+    <div class="text-[11px] text-muted">CIÊNCIA DA COMPUTAÇÃO · UERJ</div>
+    <p class="text-[11px] text-muted leading-relaxed max-w-[26ch]">
+      DADOS · BACKEND · SISTEMAS.
+    </p>
 
-  <!-- ───────────── SIDEBAR 30% ───────────── -->
-  <aside class="sidebar flex flex-col justify-between p-8">
-    <div>
-      <div class="text-[10px] text-muted tracking-widest">ROOT@UERJ:~$ WHOAMI</div>
-      <h1 class="mt-4 text-3xl md:text-4xl font-extrabold leading-none">
-        YAGO<br>PEREIRA<br>DA SILVA.
-      </h1>
-      <p class="mt-4 text-xs text-muted">Ciência da Computação · UERJ</p>
-      <p class="mt-6 text-xs leading-relaxed">
-        Construindo sistemas que conectam dados, regras e entrega real.<span class="cursor-blink">_</span>
-      </p>
-    </div>
-
-    <nav class="my-8 flex flex-col gap-1" id="sideNav">
-      <a href="#sobre"         class="nav-link" data-target="sobre"><span class="nav-bar"></span>[01] SOBRE</a>
-      <a href="#experiencias"  class="nav-link" data-target="experiencias"><span class="nav-bar"></span>[02] EXPERIÊNCIAS</a>
-      <a href="#projetos"      class="nav-link" data-target="projetos"><span class="nav-bar"></span>[03] PROJETOS</a>
-      <a href="#processo"      class="nav-link" data-target="processo"><span class="nav-bar"></span>[04] PROCESSO</a>
-      <a href="#contato"       class="nav-link" data-target="contato"><span class="nav-bar"></span>[05] CONTATO</a>
+    <nav class="pt-4 space-y-1">
+      <a href="#sobre"        class="nav-link block text-[11px]">[01] SOBRE</a>
+      <a href="#experiencias" class="nav-link block text-[11px]">[02] EXPERIÊNCIAS</a>
+      <a href="#projetos"     class="nav-link block text-[11px]">[03] PROJETOS</a>
+      <a href="#processo"     class="nav-link block text-[11px]">[04] PROCESSO</a>
+      <a href="#contato"      class="nav-link block text-[11px]">[05] CONTATO</a>
     </nav>
+  </div>
 
-    <div>
-      <div class="flex gap-2 text-[10px] font-bold">
-        <a href="https://github.com/Trevabo" class="border-2 border-black px-3 py-2 hover:bg-accent hover:text-white hover:border-accent transition-colors">GH</a>
-        <a href="https://www.linkedin.com/in/yago-pereira-da-silva" class="border-2 border-black px-3 py-2 hover:bg-accent hover:text-white hover:border-accent transition-colors">IN</a>
-        <a href="mailto:yago15488@gmail.com" class="border-2 border-black px-3 py-2 hover:bg-accent hover:text-white hover:border-accent transition-colors">MAIL</a>
-      </div>
-      <div class="mt-6 text-[10px] text-muted">STATUS: <span class="text-accent">● ONLINE</span></div>
+  <div class="space-y-2 text-[10px] text-muted">
+    <div class="flex gap-3">
+      <a href="https://github.com/Trevabo" target="_blank">GH</a>
+      <a href="https://linkedin.com/in/yago-pereira-da-silva" target="_blank">IN</a>
+      <a href="mailto:yago15488@gmail.com">MAIL</a>
     </div>
-  </aside>
+    <div><span class="text-accent">●</span> STATUS: ONLINE</div>
+  </div>
+</aside>
 
-  <!-- ───────────── CONTEÚDO 70% ───────────── -->
-  <main class="content">
+<!-- ============ CONTENT 70% ============ -->
+<main class="content ml-[30%] w-[70%]">
 
-    <!-- HERO -->
-    <section class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">// INDEX.HTML</div>
-      <h2 class="mt-6 text-5xl md:text-7xl font-extrabold leading-[0.95]">
-        Pipelines.<br>Dados.<br>Entrega real<span class="text-accent">.</span>
-      </h2>
-      <p class="mt-8 max-w-2xl text-sm text-muted leading-relaxed">
-        Extração, limpeza, regras próprias e consumo via bot ou interface — cada peça acoplada ao contexto que ela serve.
-      </p>
-    </section>
+  <!-- HERO -->
+  <section class="py-24 px-10">
+    <div class="text-[10px] text-muted mb-4">// WHOAMI</div>
+    <h2 class="text-4xl md:text-6xl font-bold leading-[1.05]">
+      CONSTRUO <span class="text-accent">SISTEMAS</span><br/>
+      QUE TRANSFORMAM<br/>
+      DADOS EM DECISÃO.
+    </h2>
+    <p class="text-muted text-sm mt-6 max-w-[60ch]">
+      Estudante de Ciência da Computação na UERJ e estagiário de Engenharia de Dados
+      na Pró-Reitoria de Saúde. Foco em backend, pipelines e infraestrutura analítica.
+    </p>
+  </section>
 
-    <!-- [01] SOBRE -->
-    <section id="sobre" class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">[01] // SOBRE_MIM.SYS</div>
-      <h3 class="mt-4 text-3xl font-extrabold">SOBRE_MIM</h3>
-      <div class="mt-10 grid md:grid-cols-3 gap-10">
-        <div class="md:col-span-1">
-          <div class="border-2 border-black aspect-square flex items-center justify-center text-[10px] text-muted">SUA_FOTO.JPG</div>
-          <div class="mt-3 text-[10px] text-muted">./avatar --user=yago --status=online</div>
-        </div>
-        <div class="md:col-span-2 text-sm leading-relaxed space-y-4">
-          <p>Sou Yago, estudante de Ciência da Computação na UERJ. Gosto de projetos que começam na extração de dados, passam por limpeza e regras próprias, e terminam em algo que alguém usa de verdade — um bot, uma interface, um relatório.</p>
-          <p>Trabalho principalmente com Python, SQL e ferramentas de scraping/IA. Penso o código sempre acoplado ao contexto: que decisão ele apoia, que dado ele consome, que entrega ele gera.</p>
-          <p>Hoje, meu interesse principal está em pipelines completos — pipeline, banco, automação e consumo via interface ou bot — onde cada peça precisa fazer sentido com a anterior.</p>
+  <!-- [01] SOBRE -->
+  <section id="sobre" class="py-20 px-10">
+    <div class="text-[10px] text-muted mb-6">[01] // SOBRE.MD</div>
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <img src="https://placehold.co/256x256/0a0a0a/fcfbf8?text=YPS"
+           alt="Yago Pereira da Silva"
+           class="w-32 h-32 object-cover border-2 border-black shrink-0" />
+      <div class="space-y-4 max-w-[60ch]">
+        <p class="text-sm leading-relaxed">
+          Tenho 21 anos, sou do Rio de Janeiro e estudo Ciência da Computação na UERJ.
+          Gosto de problemas que misturam dados, engenharia e impacto real — hoje aplico
+          isso na estruturação de dados de saúde universitária no SASU/UERJ.
+        </p>
+        <p class="text-sm text-muted leading-relaxed">
+          Trabalho confortável em Python, SQL e ecossistema de dados (Pandas, PySpark,
+          Pentaho, Power BI), e construo backends e sistemas web sob demanda.
+        </p>
+
+        <div class="pt-2">
+          <div class="text-[10px] text-muted mb-2">// STACK</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">PYTHON</span>
+            <span class="tag">PANDAS</span>
+            <span class="tag">PYSPARK</span>
+            <span class="tag">SQL</span>
+            <span class="tag">POSTGRESQL</span>
+            <span class="tag">PENTAHO</span>
+            <span class="tag">POWER BI</span>
+            <span class="tag">EXCEL</span>
+            <span class="tag">JAVASCRIPT</span>
+            <span class="tag">REACT</span>
+            <span class="tag">NODE</span>
+            <span class="tag">GIT</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- [02] EXPERIÊNCIAS  ← NOVA -->
-    <section id="experiencias" class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">[02] // EXPERIENCIAS.LOG</div>
-      <h3 class="mt-4 text-3xl font-extrabold">EXPERIÊNCIAS</h3>
+  <!-- [02] EXPERIÊNCIAS -->
+  <section id="experiencias" class="py-20 px-10">
+    <div class="text-[10px] text-muted mb-6">[02] // EXPERIENCIAS.LOG</div>
 
-      <article class="project-row mt-12 grid md:grid-cols-[160px_1fr] gap-8 pb-12 border-b border-black/20">
-        <div class="text-[10px] text-muted tracking-widest pt-2">MAI/2026 — ATUAL</div>
-        <div>
-          <h4 class="project-title text-2xl md:text-3xl font-extrabold leading-tight transition-colors">
+    <article class="border-2 border-black p-6 card-hover">
+      <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6">
+        <div class="text-[10px] text-muted">MAI/2026 — ATUAL</div>
+
+        <div class="space-y-4">
+          <h3 class="text-2xl md:text-3xl font-bold leading-tight">
             ESTAGIÁRIO DE ENGENHARIA DE DADOS <span class="text-accent">→</span>
-          </h4>
-          <div class="mt-2 text-xs text-muted">SASU · Pró-Reitoria de Saúde — Universidade do Estado do Rio de Janeiro</div>
+          </h3>
+          <div class="text-[11px] text-muted">
+            SASU · PRÓ-REITORIA DE SAÚDE — UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO
+          </div>
 
-          <p class="mt-5 text-sm leading-relaxed max-w-3xl">
-            Estruturação da infraestrutura de dados do Serviço de Acolhimento à Saúde Universitária da UERJ —
-            organização, análise e gestão estratégica de informações de saúde universitária.
+          <p class="text-sm leading-relaxed max-w-[70ch]">
+            Estruturação da infraestrutura de dados do Serviço de Acolhimento à Saúde
+            Universitária da UERJ — organização, análise e gestão estratégica de
+            informações de saúde universitária.
           </p>
 
-          <ul class="mt-6 space-y-2 text-sm leading-relaxed max-w-3xl">
-            <li class="exp-bullet">Levantamento, modelagem e consolidação de banco de dados a partir de fichas e planilhas dispersas, com padronização e anonimização dos registros.</li>
-            <li class="exp-bullet">Definição de variáveis relevantes para coleta estruturada (vínculo, curso, gênero, motivo de atendimento, risco e encaminhamentos).</li>
-            <li class="exp-bullet">Sistema para cadastro digital de fichas de atendimento e digitalização da agenda de profissionais de saúde.</li>
-            <li class="exp-bullet">Pipeline em Python (Pandas) para tratamento, limpeza e transformação dos registros.</li>
-            <li class="exp-bullet">PySpark para processamento de grandes volumes de dados históricos.</li>
-            <li class="exp-bullet">Processos de ETL com Pentaho Kettle para integração e carga na base consolidada.</li>
-            <li class="exp-bullet">Painéis e dashboards no Power BI para visualização de indicadores institucionais de saúde universitária.</li>
-            <li class="exp-bullet">Análise descritiva e cruzamento de variáveis para subsidiar Reitoria e Pró-Reitorias.</li>
-            <li class="exp-bullet">Reuniões com equipe multiprofissional (médico, psicólogo, assistente social, enfermeiro) para alinhar dados e otimizar fluxos.</li>
+          <ul class="text-sm space-y-2 text-muted">
+            <li><span class="text-accent">›</span> Levantamento, modelagem e consolidação de banco de dados a partir de fichas e planilhas dispersas, com padronização e anonimização.</li>
+            <li><span class="text-accent">›</span> Definição de variáveis para coleta estruturada (vínculo, curso, gênero, motivo, risco, encaminhamentos).</li>
+            <li><span class="text-accent">›</span> Sistema para cadastro digital de fichas de atendimento e digitalização da agenda de profissionais.</li>
+            <li><span class="text-accent">›</span> Pipeline em Python (Pandas) para tratamento, limpeza e transformação de registros.</li>
+            <li><span class="text-accent">›</span> PySpark para processamento de grandes volumes históricos.</li>
+            <li><span class="text-accent">›</span> ETL com Pentaho Kettle para integração e carga na base consolidada.</li>
+            <li><span class="text-accent">›</span> Painéis e dashboards no Power BI para indicadores institucionais.</li>
+            <li><span class="text-accent">›</span> Análise descritiva e cruzamento de variáveis para subsidiar Reitoria/Pró-Reitorias.</li>
+            <li><span class="text-accent">›</span> Reuniões com equipe multiprofissional (médico, psicólogo, assistente social, enfermeiro).</li>
           </ul>
 
-          <div class="mt-6 flex flex-wrap gap-2 text-[10px] font-bold">
-            <span class="border border-black px-2 py-1">PYTHON</span>
-            <span class="border border-black px-2 py-1">PANDAS</span>
-            <span class="border border-black px-2 py-1">PYSPARK</span>
-            <span class="border border-black px-2 py-1">PENTAHO</span>
-            <span class="border border-black px-2 py-1">POWER BI</span>
-            <span class="border border-black px-2 py-1">SQL</span>
-            <span class="border border-black px-2 py-1">EXCEL</span>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tag">PYTHON</span>
+            <span class="tag">PANDAS</span>
+            <span class="tag">PYSPARK</span>
+            <span class="tag">PENTAHO</span>
+            <span class="tag">POWER BI</span>
+            <span class="tag">SQL</span>
+            <span class="tag">EXCEL</span>
           </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- [03] PROJETOS -->
-    <section id="projetos" class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">[03] // PROJETOS.LOG</div>
-      <h3 class="mt-4 text-3xl font-extrabold">PROJETOS</h3>
-
-      <article class="project-row mt-12 grid md:grid-cols-[160px_1fr] gap-8 pb-12 border-b border-black/20">
-        <div class="text-[10px] text-muted tracking-widest pt-2">2024 — 2026</div>
-        <div>
-          <h4 class="project-title text-2xl md:text-3xl font-extrabold leading-tight transition-colors">FFL — FAST FIGHT LEAGUE <span class="text-accent">→</span></h4>
-          <p class="mt-4 text-sm leading-relaxed max-w-3xl">Jogo de cartas de League of Legends para Discord, em dupla. Cartas geradas a partir de extração de métricas de partidas oficiais, com processamento, padronização e fórmulas próprias para atribuir valores aos jogadores por temporada.</p>
-          <div class="mt-5 flex flex-wrap gap-2 text-[10px] font-bold">
-            <span class="border border-black px-2 py-1">PYTHON</span>
-            <span class="border border-black px-2 py-1">SQL</span>
-            <span class="border border-black px-2 py-1">DISCORD</span>
-            <span class="border border-black px-2 py-1">SCRAPING</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-row mt-12 grid md:grid-cols-[160px_1fr] gap-8 pb-12 border-b border-black/20">
-        <div class="text-[10px] text-muted tracking-widest pt-2">2025</div>
-        <div>
-          <h4 class="project-title text-2xl md:text-3xl font-extrabold leading-tight transition-colors">JOB ANALYZER UERJ <span class="text-accent">→</span></h4>
-          <p class="mt-4 text-sm leading-relaxed max-w-3xl">Análise e sugestão de caminhos de carreira a partir da grade curricular de Ciência da Computação da UERJ, combinando IA e banco de dados.</p>
-          <div class="mt-5 flex flex-wrap gap-2 text-[10px] font-bold">
-            <span class="border border-black px-2 py-1">RUBY</span>
-            <span class="border border-black px-2 py-1">IA</span>
-            <span class="border border-black px-2 py-1">SQL</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-row mt-12 grid md:grid-cols-[160px_1fr] gap-8">
-        <div class="text-[10px] text-muted tracking-widest pt-2">[EM CONSTRUÇÃO]</div>
-        <div>
-          <h4 class="project-title text-2xl md:text-3xl font-extrabold leading-tight transition-colors">PC HELPER</h4>
-          <p class="mt-4 text-sm leading-relaxed max-w-3xl">Projeto em Python com scraping, banco de dados e tratamento. Devolve ao usuário todas as peças necessárias para montar um PC, com link de compra, cupom de desconto, valor à vista e parcelado.</p>
-          <div class="mt-5 flex flex-wrap gap-2 text-[10px] font-bold">
-            <span class="border border-black px-2 py-1">PYTHON</span>
-            <span class="border border-black px-2 py-1">SCRAPING</span>
-            <span class="border border-black px-2 py-1">DB</span>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- [04] PROCESSO -->
-    <section id="processo" class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">[04] // PROCESSO.SH</div>
-      <h3 class="mt-4 text-3xl font-extrabold">PROCESSO</h3>
-      <div class="mt-12 grid md:grid-cols-3 gap-8">
-        <div class="border-2 border-black p-6">
-          <div class="text-accent text-2xl font-extrabold">01</div>
-          <h5 class="mt-3 font-bold">Entender a fonte</h5>
-          <p class="mt-2 text-xs text-muted leading-relaxed">Antes de qualquer modelagem, entendo como os dados são expostos, quais campos variam e o que pode ser aproveitado.</p>
-        </div>
-        <div class="border-2 border-black p-6">
-          <div class="text-accent text-2xl font-extrabold">02</div>
-          <h5 class="mt-3 font-bold">Normalizar para decidir</h5>
-          <p class="mt-2 text-xs text-muted leading-relaxed">Padronizar dados de múltiplas origens é central — a regra só funciona bem quando a base está consistente.</p>
-        </div>
-        <div class="border-2 border-black p-6">
-          <div class="text-accent text-2xl font-extrabold">03</div>
-          <h5 class="mt-3 font-bold">Transformar em produto</h5>
-          <p class="mt-2 text-xs text-muted leading-relaxed">Depois da lógica e do armazenamento, penso no uso real: como a informação chega ao usuário e a experiência final faz sentido.</p>
         </div>
       </div>
-    </section>
+    </article>
+  </section>
 
-    <!-- [05] CONTATO -->
-    <section id="contato" class="px-10 py-20 border-b-2 border-black">
-      <div class="text-[10px] text-muted tracking-widest">[05] // CONTATO.EXE</div>
-      <h3 class="mt-4 text-3xl font-extrabold">CONTATO</h3>
-      <p class="mt-6 max-w-2xl text-sm text-muted leading-relaxed">
-        Aberto a projetos, conexões e oportunidades na área de dados. A melhor forma de falar comigo é por e-mail — respondo em poucos dias.
-      </p>
-      <div class="mt-10 grid md:grid-cols-3 gap-4">
-        <a href="https://github.com/Trevabo" class="flex border-2 border-black p-5 overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
+  <!-- [03] PROJETOS -->
+  <section id="projetos" class="py-20 px-10">
+    <div class="text-[10px] text-muted mb-6">[03] // PROJETOS.DIR</div>
+
+    <div class="space-y-6">
+      <article class="border-2 border-black p-6 card-hover">
+        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
+          <div class="text-[10px] text-muted">2025</div>
           <div>
-            <div class="text-[10px] text-muted">GITHUB</div>
-            <div class="mt-1 font-bold">@Trevabo <span class="text-[10px]">→</span></div>
+            <h3 class="text-2xl font-bold">PIPELINE SAÚDE/UERJ <span class="text-accent">→</span></h3>
+            <p class="text-sm text-muted mt-2 max-w-[60ch]">
+              Pipeline de ingestão, limpeza e consolidação de dados de atendimento do SASU
+              com camadas raw/staged/curated e dashboards finais em Power BI.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">PYTHON</span><span class="tag">PANDAS</span>
+              <span class="tag">PENTAHO</span><span class="tag">POWER BI</span>
+            </div>
           </div>
-        </a>
-        <a href="mailto:yago15488@gmail.com" class="flex border-2 border-black p-5 overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
+          <span class="text-[10px]">→</span>
+        </div>
+      </article>
+
+      <article class="border-2 border-black p-6 card-hover">
+        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
+          <div class="text-[10px] text-muted">2024</div>
           <div>
-            <div class="text-[10px] text-muted">EMAIL</div>
-            <div class="mt-1 font-bold">yago15488@gmail.com <span class="text-[10px]">→</span></div>
+            <h3 class="text-2xl font-bold">SISTEMA WEB ACADÊMICO <span class="text-accent">→</span></h3>
+            <p class="text-sm text-muted mt-2 max-w-[60ch]">
+              Plataforma para gestão de fichas e agenda de profissionais, com cadastro digital
+              substituindo o fluxo em papel.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">REACT</span><span class="tag">NODE</span>
+              <span class="tag">POSTGRESQL</span>
+            </div>
           </div>
-        </a>
-        <a href="https://www.linkedin.com/in/yago-pereira-da-silva" class="flex border-2 border-black p-5 overflow-hidden hover:translate-x-1 hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="text-[10px] text-muted">LINKEDIN</div>
-            <div class="mt-1 font-bold">/in/yago-pereira-da-silva <span class="text-[10px]">→</span></div>
-          </div>
-        </a>
+          <span class="text-[10px]">→</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- [04] PROCESSO -->
+  <section id="processo" class="py-20 px-10">
+    <div class="text-[10px] text-muted mb-6">[04] // PROCESSO.SH</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="border-2 border-black p-6 bg-black text-white">
+        <div class="text-[10px] text-white/60">01</div>
+        <h3 class="text-lg font-bold mt-2">ENTENDER</h3>
+        <p class="text-xs text-white/80 mt-3 leading-relaxed">
+          Mapear o problema, os dados disponíveis e quem usa o resultado.
+        </p>
       </div>
-    </section>
 
-    <footer class="px-10 py-10 text-[10px] text-muted">
-      © 2026 YAGO PEREIRA DA SILVA — BUILT_WITH_SYSTEM_MONO // STATUS: ONLINE
-    </footer>
-  </main>
-</div>
+      <div class="border-2 border-black p-6 bg-black text-white">
+        <div class="text-[10px] text-white/60">02</div>
+        <h3 class="text-lg font-bold mt-2">CONSTRUIR</h3>
+        <p class="text-xs text-white/80 mt-3 leading-relaxed">
+          Modelar, codar e testar com ciclos curtos e revisáveis.
+        </p>
+      </div>
 
+      <div class="border-2 border-black p-6 bg-black text-white">
+        <div class="text-[10px] text-white/60">03</div>
+        <h3 class="text-lg font-bold mt-2">ENTREGAR</h3>
+        <p class="text-xs text-white/80 mt-3 leading-relaxed">
+          Documentar, publicar e medir impacto real para quem usa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- [05] CONTATO -->
+  <section id="contato" class="py-20 px-10">
+    <div class="text-[10px] text-muted mb-6">[05] // CONTATO.TXT</div>
+
+    <p class="text-sm text-muted max-w-[60ch] mb-8">
+      A melhor forma de falar comigo é por e-mail — respondo em poucos dias.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="https://github.com/Trevabo" target="_blank"
+         class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
+        <div>
+          <div class="text-[10px] text-white/60">GITHUB</div>
+          <div class="text-sm">@Trevabo</div>
+        </div>
+        <span class="text-[10px]">→</span>
+      </a>
+
+      <a href="mailto:yago15488@gmail.com"
+         class="flex items-center justify-between border-2 border-black p-4 card-hover">
+        <div>
+          <div class="text-[10px] text-muted">EMAIL</div>
+          <div class="text-sm">yago15488@gmail.com</div>
+        </div>
+        <span class="text-[10px]">→</span>
+      </a>
+
+      <a href="https://linkedin.com/in/yago-pereira-da-silva" target="_blank"
+         class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
+        <div>
+          <div class="text-[10px] text-white/60">LINKEDIN</div>
+          <div class="text-sm">/in/yago-pereira-da-silva</div>
+        </div>
+        <span class="text-[10px]">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-10 py-10 text-[10px] text-muted">
+    © 2026 YAGO PEREIRA DA SILVA — BUILT_WITH_SYSTEM_MONO // STATUS: ONLINE
+  </footer>
+</main>
+
+<!-- Scrollspy -->
 <script>
-  // Scrollspy: marca o link da sidebar conforme a seção visível
-  const links = document.querySelectorAll('#sideNav .nav-link');
-  const sections = [...links].map(l => document.getElementById(l.dataset.target)).filter(Boolean);
+  const links = document.querySelectorAll('.nav-link');
+  const map = new Map();
+  links.forEach(l => {
+    const id = l.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if (sec) map.set(sec, l);
+  });
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
+      const link = map.get(e.target);
+      if (!link) return;
       if (e.isIntersecting) {
-        links.forEach(l => l.classList.toggle('active', l.dataset.target === e.target.id));
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       }
     });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  sections.forEach(s => io.observe(s));
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  map.forEach((_, sec) => io.observe(sec));
 </script>
+
 </body>
 </html>
