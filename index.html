@@ -16,7 +16,6 @@
   .text-accent { color: var(--accent); }
   .bg-accent { background: var(--accent); }
 
-  /* Nav links da sidebar */
   .nav-link {
     position: relative;
     padding: 6px 0 6px 14px;
@@ -42,7 +41,6 @@
   .card-hover { transition: transform .15s ease; }
   .card-hover:hover { transform: translate(4px,-4px); }
 
-  /* Mobile: sidebar vira topo */
   @media (max-width: 767px) {
     .sidebar { position: static !important; width: 100% !important; height: auto !important; }
     .content { margin-left: 0 !important; width: 100% !important; }
@@ -86,223 +84,255 @@
 <!-- ============ CONTENT 70% ============ -->
 <main class="content ml-[30%] w-[70%]">
 
-  <!-- HERO -->
-  <section class="py-24 px-10">
-    <div class="text-[10px] text-muted mb-4">// WHOAMI</div>
-    <h2 class="text-4xl md:text-6xl font-bold leading-[1.05]">
-      CONSTRUO <span class="text-accent">SISTEMAS</span><br/>
-      QUE TRANSFORMAM<br/>
-      DADOS EM DECISÃO.
-    </h2>
-    <p class="text-muted text-sm mt-6 max-w-[60ch]">
-      Estudante de Ciência da Computação na UERJ e estagiário de Engenharia de Dados
-      na Pró-Reitoria de Saúde. Foco em backend, pipelines e infraestrutura analítica.
-    </p>
-  </section>
+  <!-- ✅ MODIFICAÇÃO: div wrapper adicionada aqui -->
+  <div class="max-w-[860px] mx-auto">
 
-  <!-- [01] SOBRE -->
-  <section id="sobre" class="py-20 px-10">
-    <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[01] // SOBRE.MD</h2>
-    <div class="flex flex-col md:flex-row gap-8 items-start">
-      <img src="https://placehold.co/256x256/0a0a0a/fcfbf8?text=YPS"
-           alt="Yago Pereira da Silva"
-           class="w-32 h-32 object-cover border-2 border-black shrink-0" />
-      <div class="space-y-4 max-w-[60ch]">
-        <p class="text-sm leading-relaxed">
-          Tenho 21 anos, sou do Rio de Janeiro e estudo Ciência da Computação na UERJ.
-          Gosto de problemas que misturam dados, engenharia e impacto real — hoje aplico
-          isso na estruturação de dados de saúde universitária no SASU/UERJ.
-        </p>
-        <p class="text-sm text-muted leading-relaxed">
-          Trabalho confortável em Python, SQL e ecossistema de dados (Pandas, PySpark,
-          Pentaho, Power BI), e construo backends e sistemas web sob demanda.
-        </p>
+    <!-- HERO -->
+    <section class="py-24 px-10">
+      <div class="text-[10px] text-muted mb-4">// WHOAMI</div>
+      <h2 class="text-4xl md:text-6xl font-bold leading-[1.05]">
+        CONSTRUO <span class="text-accent">SISTEMAS</span><br/>
+        QUE TRANSFORMAM<br/>
+        DADOS EM DECISÃO.
+      </h2>
+      <p class="text-muted text-sm mt-6 max-w-[60ch]">
+        Estudante de Ciência da Computação na UERJ e estagiário de Engenharia de Dados
+        na Pró-Reitoria de Saúde. Foco em backend, pipelines e infraestrutura analítica.
+      </p>
+    </section>
 
-        <div class="pt-2">
-          <div class="text-[10px] text-muted mb-2">// STACK</div>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">PYTHON</span>
-            <span class="tag">PANDAS</span>
-            <span class="tag">PYSPARK</span>
-            <span class="tag">SQL</span>
-            <span class="tag">POSTGRESQL</span>
-            <span class="tag">PENTAHO</span>
-            <span class="tag">POWER BI</span>
-            <span class="tag">EXCEL</span>
-            <span class="tag">JAVASCRIPT</span>
-            <span class="tag">REACT</span>
-            <span class="tag">NODE</span>
-            <span class="tag">GIT</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- [02] EXPERIÊNCIAS -->
-  <section id="experiencias" class="py-20 px-10">
-    <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[02] // EXPERIENCIAS.LOG</h2>
-
-    <article class="border-2 border-black p-6 card-hover">
-      <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6">
-        <div class="text-[10px] text-muted">MAI/2026 — ATUAL</div>
-
-        <div class="space-y-4">
-          <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-            ESTAGIÁRIO DE ENGENHARIA DE DADOS <span class="text-accent">→</span>
-          </h3>
-          <div class="text-[11px] text-muted">
-            SASU · PRÓ-REITORIA DE SAÚDE — UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO
-          </div>
-
-          <p class="text-sm leading-relaxed max-w-[70ch]">
-            Estruturação da infraestrutura de dados do Serviço de Acolhimento à Saúde
-            Universitária da UERJ — organização, análise e gestão estratégica de
-            informações de saúde universitária.
+    <!-- [01] SOBRE -->
+    <section id="sobre" class="py-20 px-10">
+      <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[01] // SOBRE.MD</h2>
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        <img src="https://placehold.co/256x256/0a0a0a/fcfbf8?text=YPS"
+             alt="Yago Pereira da Silva"
+             class="w-32 h-32 object-cover border-2 border-black shrink-0" />
+        <div class="space-y-4 max-w-[60ch]">
+          <p class="text-sm leading-relaxed">
+            Tenho 21 anos, sou do Rio de Janeiro e estudo Ciência da Computação na UERJ.
+            Gosto de problemas que misturam dados, engenharia e impacto real. hoje aplico
+            meu conhecimento na estruturação de dados de saúde universitária no SASU/UERJ.
+          </p>
+          <p class="text-sm leading-relaxed">
+            Trabalho confortável em Python, SQL e ecossistema de dados (Pandas, PySpark,
+            Pentaho, Power BI), e construo backends e sistemas web sob demanda.
           </p>
 
-          <ul class="text-sm space-y-2 text-muted">
-            <li><span class="text-accent">›</span> Levantamento, modelagem e consolidação de banco de dados a partir de fichas e planilhas dispersas, com padronização e anonimização.</li>
-            <li><span class="text-accent">›</span> Definição de variáveis para coleta estruturada (vínculo, curso, gênero, motivo, risco, encaminhamentos).</li>
-            <li><span class="text-accent">›</span> Sistema para cadastro digital de fichas de atendimento e digitalização da agenda de profissionais.</li>
-            <li><span class="text-accent">›</span> Pipeline em Python (Pandas) para tratamento, limpeza e transformação de registros.</li>
-            <li><span class="text-accent">›</span> PySpark para processamento de grandes volumes históricos.</li>
-            <li><span class="text-accent">›</span> ETL com Pentaho Kettle para integração e carga na base consolidada.</li>
-            <li><span class="text-accent">›</span> Painéis e dashboards no Power BI para indicadores institucionais.</li>
-            <li><span class="text-accent">›</span> Análise descritiva e cruzamento de variáveis para subsidiar Reitoria/Pró-Reitorias.</li>
-            <li><span class="text-accent">›</span> Reuniões com equipe multiprofissional (médico, psicólogo, assistente social, enfermeiro).</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tag">PYTHON</span>
-            <span class="tag">PANDAS</span>
-            <span class="tag">PYSPARK</span>
-            <span class="tag">PENTAHO</span>
-            <span class="tag">POWER BI</span>
-            <span class="tag">SQL</span>
-            <span class="tag">EXCEL</span>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- [03] PROJETOS -->
-  <section id="projetos" class="py-20 px-10">
-    <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[03] // PROJETOS.DIR</h2>
-
-    <div class="space-y-6">
-      <article class="border-2 border-black p-6 card-hover">
-        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
-          <div class="text-[10px] text-muted">2025</div>
-          <div>
-            <h3 class="text-2xl font-bold">PIPELINE SAÚDE/UERJ <span class="text-accent">→</span></h3>
-            <p class="text-sm text-muted mt-2 max-w-[60ch]">
-              Pipeline de ingestão, limpeza e consolidação de dados de atendimento do SASU
-              com camadas raw/staged/curated e dashboards finais em Power BI.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag">PYTHON</span><span class="tag">PANDAS</span>
-              <span class="tag">PENTAHO</span><span class="tag">POWER BI</span>
-            </div>
-          </div>
-          <span class="text-[10px]">→</span>
-        </div>
-      </article>
-
-      <article class="border-2 border-black p-6 card-hover">
-        <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
-          <div class="text-[10px] text-muted">2024</div>
-          <div>
-            <h3 class="text-2xl font-bold">SISTEMA WEB ACADÊMICO <span class="text-accent">→</span></h3>
-            <p class="text-sm text-muted mt-2 max-w-[60ch]">
-              Plataforma para gestão de fichas e agenda de profissionais, com cadastro digital
-              substituindo o fluxo em papel.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag">REACT</span><span class="tag">NODE</span>
+          <div class="pt-2">
+            <div class="text-[10px] text-muted mb-2">// STACK</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">PYTHON</span>
+              <span class="tag">PANDAS</span>
+              <span class="tag">PYSPARK</span>
+              <span class="tag">SQL</span>
               <span class="tag">POSTGRESQL</span>
+              <span class="tag">PENTAHO</span>
+              <span class="tag">POWER BI</span>
+              <span class="tag">EXCEL</span>
+              <span class="tag">JAVASCRIPT</span>
+              <span class="tag">REACT</span>
+              <span class="tag">NODE</span>
+              <span class="tag">GIT</span>
             </div>
           </div>
-          <span class="text-[10px]">→</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- [02] EXPERIÊNCIAS -->
+    <section id="experiencias" class="py-20 px-10">
+      <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[02] // EXPERIENCIAS.LOG</h2>
+
+      <article class="border-2 border-black p-6 card-hover">
+        <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6">
+          <div class="text-[10px] text-muted">MAI/2026 — ATUAL</div>
+
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+              ESTAGIÁRIO DE ENGENHARIA DE DADOS <span class="text-accent">→</span>
+            </h3>
+            <div class="text-[11px] text-muted">
+              SASU · PRÓ-REITORIA DE SAÚDE — UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO
+            </div>
+
+            <p class="text-sm leading-relaxed max-w-[70ch]">
+              Estruturação da infraestrutura de dados do Serviço de Acolhimento à Saúde
+              Universitária da UERJ — organização, análise e gestão estratégica de
+              informações de saúde universitária.
+            </p>
+
+            <ul class="text-sm space-y-2 text-muted">
+              <li><span class="text-accent">›</span> Levantamento, modelagem e consolidação de banco de dados a partir de fichas e planilhas dispersas, com padronização e anonimização.</li>
+              <li><span class="text-accent">›</span> Definição de variáveis para coleta estruturada.</li>
+              <li><span class="text-accent">›</span> Sistema para cadastro digital de fichas de atendimento e digitalização da agenda de profissionais.</li>
+              <li><span class="text-accent">›</span> Pipeline em Python (Pandas) para tratamento, limpeza e transformação de registros.</li>
+              <li><span class="text-accent">›</span> PySpark para processamento de grandes volumes históricos.</li>
+              <li><span class="text-accent">›</span> ETL com Pentaho Kettle para integração e carga na base consolidada.</li>
+              <li><span class="text-accent">›</span> Painéis e dashboards no Power BI para indicadores institucionais.</li>
+              <li><span class="text-accent">›</span> Análise descritiva e cruzamento de variáveis para subsidiar Reitoria/Pró-Reitorias.</li>
+              <li><span class="text-accent">›</span> Reuniões com equipe multiprofissional para comunicar a importância dos dados e otimizar fluxos de trabalho.</li>
+            </ul>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tag">PYTHON</span>
+              <span class="tag">PANDAS</span>
+              <span class="tag">PYSPARK</span>
+              <span class="tag">PENTAHO</span>
+              <span class="tag">POWER BI</span>
+              <span class="tag">SQL</span>
+              <span class="tag">EXCEL</span>
+            </div>
+          </div>
         </div>
       </article>
-    </div>
-  </section>
+    </section>
 
-  <!-- [04] PROCESSO -->
-  <section id="processo" class="py-20 px-10">
-    <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[04] // PROCESSO.SH</h2>
+    <!-- [03] PROJETOS -->
+    <section id="projetos" class="py-20 px-10">
+      <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[03] // PROJETOS.DIR</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white text-black border-2 border-black p-6">
-        <div class="text-[10px] text-white/60">01</div>
-        <h3 class="text-lg font-bold mt-2">ENTENDER</h3>
-        <p class="text-xs text-white/80 mt-3 leading-relaxed">
-          Mapear o problema, os dados disponíveis e quem usa o resultado.
-        </p>
+      <div class="space-y-6">
+
+        <!-- FFL -->
+        <article class="border-2 border-black p-6 card-hover">
+          <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
+            <div class="text-[10px] text-muted">2025 — 2026</div>
+            <div>
+              <h3 class="text-2xl font-bold">FFL — FAST FIGHT LEAGUE <span class="text-accent">→</span></h3>
+              <p class="text-sm text-muted mt-2 max-w-[60ch]">
+                Jogo de cartas de League of Legends para Discord, em dupla. Cartas geradas a partir de
+                extração de métricas de partidas oficiais, com processamento, padronização e fórmulas
+                próprias para atribuir valores aos jogadores por temporada.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="tag">PYTHON</span><span class="tag">SQL</span>
+                <span class="tag">DISCORD</span><span class="tag">SCRAPING</span>
+              </div>
+            </div>
+            <span class="text-[10px]">→</span>
+          </div>
+        </article>
+
+        <!-- JOB ANALYZER -->
+        <article class="border-2 border-black p-6 card-hover">
+          <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
+            <div class="text-[10px] text-muted">2025</div>
+            <div>
+              <h3 class="text-2xl font-bold">JOB ANALYZER UERJ <span class="text-accent">→</span></h3>
+              <p class="text-sm text-muted mt-2 max-w-[60ch]">
+                Análise e sugestão de caminhos de carreira a partir da grade curricular de Ciência da
+                Computação da UERJ, combinando IA e banco de dados.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="tag">RUBY</span><span class="tag">IA</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <span class="text-[10px]">→</span>
+          </div>
+        </article>
+
+        <!-- PC HELPER -->
+        <article class="border-2 border-black p-6 card-hover opacity-60">
+          <div class="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-6 items-start">
+            <div class="text-[10px] text-muted">[EM CONSTRUÇÃO]</div>
+            <div>
+              <h3 class="text-2xl font-bold">PC HELPER <span class="text-accent">→</span></h3>
+              <p class="text-sm text-muted mt-2 max-w-[60ch]">
+                Projeto em Python com scraping, banco de dados e tratamento. Devolve ao usuário todas
+                as peças necessárias para montar um PC, com link de compra, cupom de desconto, valor
+                à vista e parcelado.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="tag">PYTHON</span><span class="tag">SCRAPING</span>
+                <span class="tag">SQLITE</span>
+              </div>
+            </div>
+            <span class="text-[10px]">→</span>
+          </div>
+        </article>
+
       </div>
+    </section>
 
-      <div class="border-2 border-black p-6 bg-black text-white">
-        <div class="text-[10px] text-white/60">02</div>
-        <h3 class="text-lg font-bold mt-2">CONSTRUIR</h3>
-        <p class="text-xs text-white/80 mt-3 leading-relaxed">
-          Modelar, codar e testar com ciclos curtos e revisáveis.
-        </p>
+    <!-- [04] PROCESSO -->
+    <section id="processo" class="py-20 px-10">
+      <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[04] // PROCESSO.SH</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white text-black border-2 border-black p-6">
+          <div class="text-[10px] text-black/60">01</div>
+          <h3 class="text-lg font-bold mt-2">ENTENDER</h3>
+          <p class="text-xs text-black/80 mt-3 leading-relaxed">
+            Mapear o problema, os dados disponíveis e quem usa o resultado.
+          </p>
+        </div>
+
+        <div class="border-2 border-black p-6 bg-black text-white">
+          <div class="text-[10px] text-white/60">02</div>
+          <h3 class="text-lg font-bold mt-2">CONSTRUIR</h3>
+          <p class="text-xs text-white/80 mt-3 leading-relaxed">
+            Modelar, codar e testar com ciclos curtos e revisáveis.
+          </p>
+        </div>
+
+        <div class="bg-white text-black border-2 border-black p-6">
+          <div class="text-[10px] text-black/60">03</div>
+          <h3 class="text-lg font-bold mt-2">ENTREGAR</h3>
+          <p class="text-xs text-black/80 mt-3 leading-relaxed">
+            Documentar, publicar e medir impacto real para quem usa.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-white text-black border-2 border-black p-6">
-        <div class="text-[10px] text-white/60">03</div>
-        <h3 class="text-lg font-bold mt-2">ENTREGAR</h3>
-        <p class="text-xs text-white/80 mt-3 leading-relaxed">
-          Documentar, publicar e medir impacto real para quem usa.
-        </p>
+    <!-- [05] CONTATO -->
+    <section id="contato" class="py-20 px-10">
+      <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[05] // CONTATO.TXT</h2>
+
+      <p class="text-sm text-muted max-w-[60ch] mb-8">
+        A melhor forma de falar comigo é por e-mail, respondo em poucos dias.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="https://github.com/Trevabo" target="_blank"
+           class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
+          <div>
+            <div class="text-[10px] text-white/60">GITHUB</div>
+            <div class="text-sm">@Trevabo</div>
+          </div>
+          <span class="text-[10px]">→</span>
+        </a>
+
+        <a href="mailto:yago15488@gmail.com"
+           class="flex items-center justify-between border-2 border-black p-4 card-hover">
+          <div>
+            <div class="text-[10px] text-muted">EMAIL</div>
+            <div class="text-sm">yago15488@gmail.com</div>
+          </div>
+          <span class="text-[10px]">→</span>
+        </a>
+
+        <a href="https://linkedin.com/in/yago-pereira-da-silva" target="_blank"
+           class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
+          <div>
+            <div class="text-[10px] text-white/60">LINKEDIN</div>
+            <div class="text-sm">/in/yago-pereira-da-silva</div>
+          </div>
+          <span class="text-[10px]">→</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- [05] CONTATO -->
-  <section id="contato" class="py-20 px-10">
-    <h2 class="text-accent text-2xl md:text-3xl font-bold tracking-tight mb-10">[05] // CONTATO.TXT</h2>
+    <!-- FOOTER -->
+    <footer class="px-10 py-10 text-[10px] text-muted">
+      © 2026 YAGO PEREIRA DA SILVA — BUILT_WITH_SYSTEM_MONO // STATUS: ONLINE
+    </footer>
 
-    <p class="text-sm text-muted max-w-[60ch] mb-8">
-      A melhor forma de falar comigo é por e-mail — respondo em poucos dias.
-    </p>
+  <!-- ✅ MODIFICAÇÃO: fechamento da div wrapper aqui -->
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <a href="https://github.com/Trevabo" target="_blank"
-         class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
-        <div>
-          <div class="text-[10px] text-white/60">GITHUB</div>
-          <div class="text-sm">@Trevabo</div>
-        </div>
-        <span class="text-[10px]">→</span>
-      </a>
-
-      <a href="mailto:yago15488@gmail.com"
-         class="flex items-center justify-between border-2 border-black p-4 card-hover">
-        <div>
-          <div class="text-[10px] text-muted">EMAIL</div>
-          <div class="text-sm">yago15488@gmail.com</div>
-        </div>
-        <span class="text-[10px]">→</span>
-      </a>
-
-      <a href="https://linkedin.com/in/yago-pereira-da-silva" target="_blank"
-         class="flex items-center justify-between border-2 border-black bg-black text-white p-4 card-hover">
-        <div>
-          <div class="text-[10px] text-white/60">LINKEDIN</div>
-          <div class="text-sm">/in/yago-pereira-da-silva</div>
-        </div>
-        <span class="text-[10px]">→</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="px-10 py-10 text-[10px] text-muted">
-    © 2026 YAGO PEREIRA DA SILVA — BUILT_WITH_SYSTEM_MONO // STATUS: ONLINE
-  </footer>
 </main>
 
 <!-- Scrollspy -->
